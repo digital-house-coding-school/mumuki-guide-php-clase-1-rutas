@@ -1,11 +1,11 @@
 public function testPrimerRuta(): void {
-  $rutas = Route::$routes;
+  $rutasGet = Route::$routesGet;
   
-  $this->assertTrue(count($rutas) == 1, "Debería haber una ruta en tu solución");
+  $this->assertTrue(count($rutas) == 1, "Debería haber una ruta en tu solución por GET");
   
-  $rutaInicio = $rutas[0];
+  $rutaInicio = $rutasGet[0];
   
   $this->assertTrue($rutaInicio["route"] == "inicio" || $rutaInicio["route"] == "/inicio", "No esta definida una ruta a /inicio");
   
-  var_dump($rutaInicio["action"]);exit;
+  $this->assertTrue($rutaInicio["action"] instanceof Closure, "El segundo parámetro de la ruta debe ser una función anónima");
 }

@@ -1,5 +1,6 @@
 class Route {
-  public static $routes = [];
+  public static $routesGet = [];
+  public static $routesPost = [];
 
   public static function get($route, $action) {
     $newRoute = [
@@ -7,7 +8,7 @@ class Route {
       "action" => $action
     ];
     
-    Route::$routes[] = $newRoute;
+    Route::$routesGet[] = $newRoute;
   }
   
   public static function post($route, $action) {
@@ -16,7 +17,7 @@ class Route {
       "action" => $action
     ];
     
-    Route::$routes[] = $newRoute;
+    Route::$routesPost[] = $newRoute;
   }
 
 }
