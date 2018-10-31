@@ -6,4 +6,6 @@ public function testPrimerRuta(): void {
   $rutaInicio = $rutas[0];
   
   $this->assertTrue($rutaInicio["route"] == "inicio" || $rutaInicio["route"] == "/inicio", "No esta definida una ruta a /inicio");
+  
+  var_dump($rutaInicio["action"]);exit;
 }
