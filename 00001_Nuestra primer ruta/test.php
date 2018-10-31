@@ -8,4 +8,11 @@ public function testPrimerRuta(): void {
   $this->assertTrue($rutaInicio["route"] == "inicio" || $rutaInicio["route"] == "/inicio", "No esta definida una ruta a /inicio");
   
   $this->assertTrue($rutaInicio["action"] instanceof Closure, "El segundo parámetro de la ruta debe ser una función anónima");
+  
+  $resul = $rutaInicio["action"]();
+  
+  $this->assertTrue(is_string($resul), "El resultado al ingresar a /inicio debería ser un string");
+  
+  $this->assertTrue(strtolower($resul) === "bienvenido", "Al ingresar a la ruta /inicio, no se recibe 'Bienvenido', se recibe '$resul');
+  
 }
