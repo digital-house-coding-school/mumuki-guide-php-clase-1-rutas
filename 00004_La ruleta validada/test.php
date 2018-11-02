@@ -45,6 +45,12 @@ public function testRutaRuleta(): void {
   
   $this->assertTrue(strtolower($resul) === "apuesta al numero 0", "Al ingresar a la ruta /ruleta/0, no se recibe 'Apuesta al numero 0', se recibe '$resul'");
   
+    $resul = $ruta["action"](36);
+  
+   $this->assertTrue(is_string($resul), "El resultado al ingresar a /ruleta/36 debería ser un string");
+  
+  $this->assertTrue(strtolower($resul) === "apuesta al numero 36", "Al ingresar a la ruta /ruleta/36, no se recibe 'Apuesta al numero 36', se recibe '$resul'");
+  
   $resul = $ruta["action"](-2);
   
    $this->assertTrue(is_string($resul), "El resultado al ingresar a /ruleta/-2 debería ser un string");
