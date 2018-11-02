@@ -1,4 +1,9 @@
 public function testBienvenida(): void {
+  global $pasePorView;
+  
+  $pasePorView = false;
+
+
   $rutasGet = Route::$routesGet;
   
   $this->assertTrue(count($rutasGet) == 1, "Debería haber una ruta en tu solución por GET");
@@ -32,4 +37,6 @@ public function testBienvenida(): void {
   $this->assertTrue(count($arguments) == 2, "La función anónima debe recibir dos parámetros");
   
   $resul = $ruta["action"]("Arya", "Stark");
+  
+  $this->assertTrue($pasePorView, "Parece que no llamaste a la función view");
 }
