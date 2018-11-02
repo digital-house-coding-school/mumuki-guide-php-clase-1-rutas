@@ -18,7 +18,9 @@ public function testRutaRuleta(): void {
 
   $this->assertTrue($partesRuta[0] == "ruleta", "La ruta por GET debe ser a /ruleta");
   
-  var_dump(preg_match("\{[a-zA-Z]*\}", $partesRuta[1]));exit;
+  preg_match("{[a-zA-Z]*}", $partesRuta[1], $output);
+  
+  var_dump($output);exit;
   
   $this->assertTrue(preg_match("{[a-zA-Z]*}", $partesRuta[1]) === 1, "La segunda parte de la ruta no esta indicando un parámetro");
   
