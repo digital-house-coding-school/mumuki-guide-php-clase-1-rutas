@@ -11,7 +11,7 @@ public function testPrimerRuta(): void {
   
   $this->assertTrue($rutaInicio["route"] == "inicio" || $rutaInicio["route"] == "/inicio", "No esta definida una ruta a /inicio");
   
-  var_dump($rutaInicio["action"]);exit;
+  var_dump($rutaInicio["action"] instanceof Closure);exit;
   
   $this->assertTrue($rutaInicio["action"] instanceof Closure, "El segundo parámetro de la ruta debe ser una función anónima");
   
