@@ -6,7 +6,7 @@ function view($route, $vac = []) {
   return $route;
 }
 
-function compact($variable1, $variable2 = null, $variable 3 = null) {
+function compact($variable1, $variable2 = null, $variable3 = null) {
 
 }
 
