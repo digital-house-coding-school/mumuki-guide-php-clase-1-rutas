@@ -4,14 +4,15 @@ public function testRutaRuleta(): void {
   $this->assertTrue(count($rutasGet) == 1, "Debería haber una ruta en tu solución por GET");
   
   $ruta = $rutasGet[0];
+  $rutaString = $ruta["route"];
   
-  $primerCaracter = substr($ruta, 0, 1);
+  $primerCaracter = substr($rutaString, 0, 1);
   
   if ($primerCaracter == "/") {
-    $ruta = substr($ruta, 1);
+    $rutaString = substr($rutaString, 1);
   }
   
-  $partesRuta = explode("/", $ruta);
+  $partesRuta = explode("/", $rutaString);
   
   
   
