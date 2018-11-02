@@ -22,7 +22,7 @@ public function testRutaRuleta(): void {
   
   $this->assertTrue($ruta["action"] instanceof Closure, "El segundo parámetro de la ruta debe ser una función anónima");
   
-  $reflection = new ReflectionFunction($ruta["action");
+  $reflection = new ReflectionFunction($ruta["action"]);
   $arguments  = $reflection->getParameters();
   
   var_dump($arguments);exit;
