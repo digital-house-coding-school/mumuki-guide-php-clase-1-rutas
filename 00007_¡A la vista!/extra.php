@@ -1,3 +1,5 @@
+namespace interno;
+
 $pasePorView = false;
 
 function view($route, $vac = []) {
