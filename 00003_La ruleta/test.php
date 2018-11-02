@@ -29,4 +29,3 @@ public function testRutaRuleta(): void {
   
   $this->assertTrue(strtolower($resul) === "registrese", "Al ingresar a la ruta /registracion, no se recibe 'Registrese', se recibe '$resul'");
 }
-}
