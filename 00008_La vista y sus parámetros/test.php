@@ -39,4 +39,6 @@ public function testBienvenida(): void {
   $resul = $ruta["action"]("Arya", "Stark");
   
   $this->assertTrue($pasePorView, "Parece que no llamaste a la función view");
+  
+  $this->assertTrue($resul == "inicio", "Parecería que no estas retornando el resultado o que enviaste el nombre incorrecto a la función view");
 }
