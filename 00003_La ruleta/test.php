@@ -25,11 +25,17 @@ public function testRutaRuleta(): void {
   $reflection = new ReflectionFunction($ruta["action"]);
   $arguments  = $reflection->getParameters();
   
-  var_dump($arguments);exit;
+  $this->assertTrue(count($arguments) == 1, "La función anónima debe recibir un parámetro");
   
-  $resul = $ruta["action"]();
+  $resul = $ruta["action"](7);
   
-   $this->assertTrue(is_string($resul), "El resultado al ingresar a /registracion debería ser un string");
+   $this->assertTrue(is_string($resul), "El resultado al ingresar a /ruleta/7 debería ser un string");
   
-  $this->assertTrue(strtolower($resul) === "registrese", "Al ingresar a la ruta /registracion, no se recibe 'Registrese', se recibe '$resul'");
+  $this->assertTrue(strtolower($resul) === "apuesta al numero 7", "Al ingresar a la ruta /ruleta/7, no se recibe 'Apuesta al numero 7', se recibe '$resul'");
+  
+  $resul = $ruta["action"](11);
+  
+   $this->assertTrue(is_string($resul), "El resultado al ingresar a /ruleta/11 debería ser un string");
+  
+  $this->assertTrue(strtolower($resul) === "apuesta al numero 11", "Al ingresar a la ruta /ruleta/11, no se recibe 'Apuesta al numero 11', se recibe '$resul'");
 }
