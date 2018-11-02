@@ -20,7 +20,7 @@ public function testRutaRuleta(): void {
   
   $this->assertTrue(preg_match("/{[a-zA-Z]+}/", $partesRuta[1]) === 1, "La segunda parte de la ruta no esta indicando un parámetro");
   
-  $this->assertTrue(preg_match("/{[a-zA-Z]+/?}/", $partesRuta[2]) === 1, "La tercer parte de la ruta no esta indicando un parámetro optativo");
+  $this->assertTrue(preg_match("/{[a-zA-Z]+\?}/", $partesRuta[2]) === 1, "La tercer parte de la ruta no esta indicando un parámetro optativo");
   
   $this->assertFalse($partesRuta[1] === $partesRuta[2], "Ambos parametros deben tener un placeholder diferente");
   
