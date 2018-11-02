@@ -1,5 +1,3 @@
-namespace interno;
-
 $pasePorView = false;
 
 function view($route, $vac = []) {
@@ -7,11 +5,6 @@ function view($route, $vac = []) {
   $pasePorView = true;
   return $route;
 }
-
-function compact($variable1, $variable2 = null, $variable3 = null) {
-
-}
-
 
 class Route {
   public static $routesGet = [];
